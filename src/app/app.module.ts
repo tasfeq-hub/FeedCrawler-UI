@@ -9,6 +9,8 @@ import { FeedThreeComponent } from './feed-three/feed-three.component';
 import { FeedFourComponent } from './feed-four/feed-four.component';
 import { FeedFiveComponent } from './feed-five/feed-five.component';
 import { HeaderComponent } from './header/header.component';
+import { SliderComponent } from './slider/slider.component';
+import { FeedOneService } from './feed-one/feedone.service';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,14 @@ import { HeaderComponent } from './header/header.component';
     FeedThreeComponent,
     FeedFourComponent,
     FeedFiveComponent,
-    HeaderComponent
+    HeaderComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule  
   ],
-  providers: [],
+  providers: [FeedOneService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
