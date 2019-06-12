@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FeedThreeComponent implements OnInit {
 
+  feedIsEnabled:boolean = true;
   feed: Feed[] = [];
   
   constructor(private http: HttpClient) { }
@@ -21,4 +22,8 @@ export class FeedThreeComponent implements OnInit {
     })
   }
 
+  toggleFeed(){
+    this.feedIsEnabled = !this.feedIsEnabled;
+  }
+  
 }

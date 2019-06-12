@@ -8,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./feed-two.component.css']
 })
 export class FeedTwoComponent implements OnInit {
-
+  
+  feedIsEnabled:boolean = true;
   feed: Feed[] = [];
 
   constructor(private http: HttpClient) { }
@@ -19,6 +20,10 @@ export class FeedTwoComponent implements OnInit {
     .subscribe(feeds =>{
       this.feed = feeds;
     })
+  }
+
+  toggleFeed(){
+    this.feedIsEnabled = !this.feedIsEnabled;
   }
 
 }
