@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Feed } from 'src/app/feed.model';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-feed-four',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedFourComponent implements OnInit {
 
-  constructor() { }
+  feed: Feed[] = [];
+  
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.http
+    .get<Feed[]>("http://localhost:8080/ssports-feeds")
+    .subscribe(feeds =>{
+      this.feed = feeds;
+    })
   }
 
 }

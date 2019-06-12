@@ -11,7 +11,6 @@ import { FeedFourComponent } from './feed-four/feed-four.component';
 import { FeedFiveComponent } from './feed-five/feed-five.component';
 import { HeaderComponent } from './header/header.component';
 import { SliderComponent } from './slider/slider.component';
-import { FeedOneService } from './feed-one/feedone.service';
 
 @NgModule({
   declarations: [

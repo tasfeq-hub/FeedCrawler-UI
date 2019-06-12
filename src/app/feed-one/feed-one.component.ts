@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FeedOne } from 'src/app/feed-one/feedone.model';
+import { Feed } from 'src/app/feed.model';
 import { HttpClient } from '@angular/common/http';
  
 @Component({
@@ -9,15 +9,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FeedOneComponent implements OnInit {
 
-  feedOne: FeedOne[] = [];
+  feed: Feed[] = [];
   
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.http
-    .get<FeedOne[]>("http://localhost:8080/nyt-feeds")
+    .get<Feed[]>("http://localhost:8080/nyt-feeds")
     .subscribe(feeds =>{
-      this.feedOne = feeds;
+      this.feed = feeds;
     })
   }
 

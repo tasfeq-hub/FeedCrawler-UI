@@ -1,4 +1,4 @@
-export class FeedOne{
+export class Feed{
 
     public id:number;
     public title:string;
