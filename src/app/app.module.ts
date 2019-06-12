@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { AppComponent } from './app.component';
 import { FeedOneComponent } from './feed-one/feed-one.component';
@@ -25,9 +26,10 @@ import { FeedOneService } from './feed-one/feedone.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule  
+    FormsModule,
+    HttpClientModule  
   ],
-  providers: [FeedOneService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FeedOne } from 'src/app/feed-one/feedone.model';
-import { FeedOneService } from './feedone.service';
-
+import { HttpClient } from '@angular/common/http';
+ 
 @Component({
   selector: 'app-feed-one',
   templateUrl: './feed-one.component.html',
@@ -9,20 +9,16 @@ import { FeedOneService } from './feedone.service';
 })
 export class FeedOneComponent implements OnInit {
 
-  feedOne: FeedOne[];
-  /*
-  feedOne: FeedOne[] = [
-    new FeedOne("First title","this is the link","january 04", new Date(),"NZK"),
-    new FeedOne("second title","this is the link","january 05", new Date(),"NZK"),
-    new FeedOne("third title","this is the link","january 06", new Date(),"NZK"),
-    new FeedOne("fourth title","this is the link","january 07", new Date(),"NZK")
-  ];
-  */
+  feedOne: FeedOne[] = [];
   
-  constructor(private feedOneService : FeedOneService) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.feedOne = this.feedOneService.getFeedOne();
+    this.http
+    .get<FeedOne[]>("http://localhost:8080/nyt-feeds")
+    .subscribe(feeds =>{
+      this.feedOne = feeds;
+    })
   }
 
 }
