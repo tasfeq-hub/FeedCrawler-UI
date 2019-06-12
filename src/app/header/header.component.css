@@ -1,0 +1,9 @@
+.navbar-default {
+    background-color: #84ddff;
+    border-color: #1b76fe;
+}
+.navbar-brand{
+    color: black;
+    font-size: 26px;
+    padding: 15px;
+}

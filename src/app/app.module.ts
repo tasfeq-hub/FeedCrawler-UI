@@ -10,7 +10,6 @@ import { FeedThreeComponent } from './feed-three/feed-three.component';
 import { FeedFourComponent } from './feed-four/feed-four.component';
 import { FeedFiveComponent } from './feed-five/feed-five.component';
 import { HeaderComponent } from './header/header.component';
-import { SliderComponent } from './slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import { SliderComponent } from './slider/slider.component';
     FeedThreeComponent,
     FeedFourComponent,
     FeedFiveComponent,
-    HeaderComponent,
-    SliderComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

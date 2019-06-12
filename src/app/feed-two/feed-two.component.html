@@ -1,14 +1,26 @@
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title">E-Online Feed</h3>
+    <label class="switch pull-right">
+      <input type="checkbox" checked>
+      <span class="slider round"></span>
+    </label>
+  </div>
+</div>
 <div class="row">
   <div class="col-xs-12">
-    <a [href]="feed.link" class="list-group-item clearfix"
-    *ngFor="let feed of feed | slice:0:7">
+    <a 
+    [href]="feed.link" 
+    class="list-group-item clearfix"
+    *ngFor="let feed of feed | slice:0:7"
+    target="_blank">
       <div class="pull-left">
         <h4 class="list-group-item-heading">{{ feed.title}}</h4>
-        <h4 class="list-group-item-heading">{{ feed.link}}</h4>
-        <h4 class="list-group-item-heading">{{ feed.published_at}}</h4>
-        <h4 class="list-group-item-heading">{{ feed.feed_provider}}</h4>
+        <h6 class="list-group-item-heading">Published on: {{ feed.published_at}}</h6>
       </div>
     </a>
   </div>
 </div>
+  
+  
   
