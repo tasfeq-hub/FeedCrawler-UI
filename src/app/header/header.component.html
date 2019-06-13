@@ -12,3 +12,22 @@
     </div>
   </div>
 </nav>
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+    <button type="button" class="btn btn-primary btn-lg update-btn" aria-label="left Align" (click)="updateCheck()">
+      <span class="glyphicon glyphicon-refresh" aria-hidden="true">
+        <h4>Update Feeds</h4>
+      </span>
+    </button>
+  </div>
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="updatePossible">
+    {{ alertMessage }}
+</div>
+<div class="loader-div" *ngIf="showSpinner">
+    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+</div>
+
+
+  
+
