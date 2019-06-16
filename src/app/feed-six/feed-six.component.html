@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title">Washington Times</h3>
+    <label class="switch pull-right">
+      <input type="checkbox" checked>
+      <span class="slider round" (click)="toggleFeed()"></span>
+    </label>
+  </div>
+</div>
+<div class="col-xs-12">
+    <ng-template #feedDisabledMessage><img class="img-feed" src="assets/no_feed.png"/></ng-template>
+</div>
+<div class="row" *ngIf="feedIsEnabled; else feedDisabledMessage">
+  <div class="col-xs-12">
+    <a 
+    [href]="feed.link" 
+    class="list-group-item clearfix"
+    *ngFor="let feed of feed | slice:0:7"
+    target="_blank">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ feed.title}}</h4>
+        <h6 class="list-group-item-heading">Published on: {{ feed.published_at}}</h6>
+      </div>
+    </a>
+  </div>
+</div>
